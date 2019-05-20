@@ -1,10 +1,16 @@
 //testing local changes to GitHub 
 
 //Include a text field that will be revealed with "other" is selected
-//HELP 1: This code block shows no errors but the text box doesn't display when 'Other' clicked
-$('#other-title').hide();
-$("#title").on('click', 'other', function(){
-    $('#other-title').show();
+
+
+const $newText = $("#other-title")
+ $($newText).hide();
+$("#title").change(function(){
+if($("#title").val()==="other"){
+    $($newText).show();
+} else {
+    $($newText).hide()
+}
 });
 
 //For the T-Shirt "Color" menu, only display the color options that match the design selected in the "Design" menu.
