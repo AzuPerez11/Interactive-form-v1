@@ -41,8 +41,41 @@ $("#color").hide();
     }
     });
 
+const $activities = $("#activities");
+const $jsFrameworks = $("[name='js-frameworks']");
+const $express = $("[name='express']");
+const $jsLibraries = $("[name='js-libs']");
+const $node = $("[name='node']");
 
+// $($express).hide();
+// $($jsFrameworks).hide();
+// $($jsLibraries).hide();
+// $($node).hide();
+    $("#activities").change(function(){
+        if ($($jsFrameworks).checked()){
+            $($express).hide();
+        } else {
+        $($jsFrameworks).checked()
+        }
+    });
+    //     if($("#js-frameworks").click(){
+    //         $("#express:disabled");
+    //     //     $($punsColors).hide();
+    //     //  $($heartColors).show()
+    //     } else {
+    //     $("#js-frameworks:checked")
+    // }
+    // });
 
+    // $("#design").change(function(){
+    //     if($("#design").val()==="heart js"){
+    //         $("#color").show();
+    //         $($punsColors).hide();
+    //      $($heartColors).show()
+    //     } else {
+    //     $($heartColors).hide()
+    // }
+    // });
     
 //The form element:
 //<form action = "index.html" method = "post"></form>
