@@ -41,42 +41,47 @@ $("#color").hide();
     }
     });
 
-const $activities = $("#activities");
+const $activities = $(".activities");
 const $jsFrameworks = $("[name='js-frameworks']");
 const $express = $("[name='express']");
 const $jsLibraries = $("[name='js-libs']");
 const $node = $("[name='node']");
 
-// $($express).hide();
+// $($activities).hide();
+// $($express).attr('disabled', 'disabled');
 // $($jsFrameworks).hide();
 // $($jsLibraries).hide();
 // $($node).hide();
-    $("#activities").change(function(){
-        if ($($jsFrameworks).checked()){
-            $($express).hide();
+    $($activities).change(function(){
+        if ($($jsFrameworks).is(':checked')){
+           $($express).attr('disabled', 'disabled')
         } else {
-        $($jsFrameworks).checked()
+        $($express).attr('disabled', false)
         }
     });
-    //     if($("#js-frameworks").click(){
-    //         $("#express:disabled");
-    //     //     $($punsColors).hide();
-    //     //  $($heartColors).show()
-    //     } else {
-    //     $("#js-frameworks:checked")
-    // }
-    // });
 
-    // $("#design").change(function(){
-    //     if($("#design").val()==="heart js"){
-    //         $("#color").show();
-    //         $($punsColors).hide();
-    //      $($heartColors).show()
-    //     } else {
-    //     $($heartColors).hide()
-    // }
-    // });
-    
+    $($activities).change(function(){
+        if ($($express).is(':checked')){
+           $($jsFrameworks).attr('disabled', 'disabled')
+        } else {
+        $($jsFrameworks).attr('disabled', false)
+        }
+    });
+
+    $($activities).change(function(){
+        if ($($jsLibraries).is(':checked')){
+           $($node).attr('disabled', 'disabled')
+        } else {
+        $($node).attr('disabled', false)
+        }
+    });
+    $($activities).change(function(){
+        if ($($node).is(':checked')){
+           $($jsLibraries).attr('disabled', 'disabled')
+        } else {
+        $($jsLibraries).attr('disabled', false)
+        }
+    });
 //The form element:
 //<form action = "index.html" method = "post"></form>
 //<h1>Sign Up</h1>
