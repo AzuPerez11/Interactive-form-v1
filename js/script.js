@@ -42,10 +42,13 @@ $("#color").hide();
     });
 
 const $activities = $(".activities");
+const $mainConference = $("[name='all']");
 const $jsFrameworks = $("[name='js-frameworks']");
-const $express = $("[name='express']");
 const $jsLibraries = $("[name='js-libs']");
+const $express = $("[name='express']");
 const $node = $("[name='node']");
+const $buildToolsWS = $("[name ='build-tools']");
+const $npmWS = $("[name = 'npm']");
 
     $($activities).change(function(){
         if ($($jsFrameworks).is(':checked')){
@@ -78,14 +81,56 @@ const $node = $("[name='node']");
         }
 });
 
-let totalCost = 10;
-const $displayedCost =  $('<div id="cost">Your total cost is: $(totalCost)</div>'); 
+let totalCost = 0;
+const $displayedCost =  $(`<div id="cost">Your total cost is: $ <span class = "apple">${totalCost}</span></div>`); 
 $($activities).append($displayedCost);
 $($displayedCost).show();
 
 $($activities).change(function(){
+    if ($($mainConference).is(':checked')){
+        totalCost += 200;
+        $displayedCost.find(".apple").text(totalCost);
+    }
+});
+
+$($activities).change(function(){
+    if ($($jsFrameworks).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+    }
+});
+$($activities).change(function(){
+    if ($($jsLibraries).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+    }
+});
+
+$($activities).change(function(){
+    if ($($express).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+    }
+});
+
+$($activities).change(function(){
     if ($($node).is(':checked')){
         totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+    }
+});
+
+$($activities).change(function(){
+    if ($($buildToolsWS).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+    }
+});
+
+$($activities).change(function(){
+    if ($($npmWS).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
     }
 });
 //The form element:
