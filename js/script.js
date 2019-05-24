@@ -47,11 +47,6 @@ const $express = $("[name='express']");
 const $jsLibraries = $("[name='js-libs']");
 const $node = $("[name='node']");
 
-// $($activities).hide();
-// $($express).attr('disabled', 'disabled');
-// $($jsFrameworks).hide();
-// $($jsLibraries).hide();
-// $($node).hide();
     $($activities).change(function(){
         if ($($jsFrameworks).is(':checked')){
            $($express).attr('disabled', 'disabled')
@@ -81,7 +76,18 @@ const $node = $("[name='node']");
         } else {
         $($jsLibraries).attr('disabled', false)
         }
-    });
+});
+
+let totalCost = 10;
+const $displayedCost =  $('<div id="cost">Your total cost is: $(totalCost)</div>'); 
+$($activities).append($displayedCost);
+$($displayedCost).show();
+
+$($activities).change(function(){
+    if ($($node).is(':checked')){
+        totalCost += 100;
+    }
+});
 //The form element:
 //<form action = "index.html" method = "post"></form>
 //<h1>Sign Up</h1>
