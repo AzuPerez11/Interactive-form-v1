@@ -86,77 +86,87 @@ const $displayedCost =  $(`<div id="cost">Your total cost is: $ <span class = "a
 $($activities).append($displayedCost);
 $($displayedCost).show();
 
-$($activities).change(function(){
+// $($activities).change(function(){
+// const banana = $($mainConference).is()
+// };
+
+$($mainConference).change(function(){
     if ($($mainConference).is(':checked')){
         totalCost += 200;
-        $displayedCost.find(".apple").text(totalCost);
+        $($displayedCost).find(".apple").text(totalCost);
+$displayedCost.show();
     } else { 
-        if ($mainConference.is(':unchecked')){
+        // if ($mainConference.is(':unchecked')){
         totalCost -= 200;
-        $displayedCost.find(".apple").text(totalCost);
-}
-    }
+        $displayedCost.find (".apple").text(totalCost);
+} 
 });
 
-// $($activities).change(function(){
-//     if ($($jsFrameworks).is(':checked')){
-//         totalCost += 100;
-//         $displayedCost.find(".apple").text(totalCost);
-//     }else { 
-//         totalCost -= 100;
-//         $displayedCost.find(".apple").text(totalCost);
-// }
-// });
-// $($activities).change(function(){
-//     if ($($jsLibraries).is(':checked')){
-//         totalCost += 100;
-//         $displayedCost.find(".apple").text(totalCost);
-//     }else { 
-//         totalCost -= 100;
-//         $displayedCost.find(".apple").text(totalCost);
-// }
-// });
+$($jsFrameworks).change(function(){
+    if ($($jsFrameworks).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    }else { 
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+}
+});
+$($jsLibraries).change(function(){
+    if ($($jsLibraries).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    }else { 
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+}
+});
 
-// $($activities).change(function(){
-//     if ($($express).is(':checked')){
-//         totalCost += 100;
-//         $displayedCost.find(".apple").text(totalCost);
-//     } else { 
-//         totalCost -= 100;
-//         $displayedCost.find(".apple").text(totalCost);
+$($express).change(function(){
+    if ($($express).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    } else { 
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
     
-// }
-// });
+}
+});
 
-// $($activities).change(function(){
-//     if ($($node).is(':checked')){
-//         totalCost += 100;
-//         $displayedCost.find(".apple").text(totalCost);
-//     } else { 
-//         totalCost -= 100;
-//         $displayedCost.find(".apple").text(totalCost);
-// }
-// });
+$($node).change(function(){
+    if ($($node).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    } else { 
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+}
+});
 
-// $($activities).change(function(){
-//     if ($($buildToolsWS).is(':checked')){
-//         totalCost += 100;
-//         $displayedCost.find(".apple").text(totalCost);
-//     }else { 
-//         totalCost -= 100;
-//         $displayedCost.find(".apple").text(totalCost);
-// }  
-// });
+$($buildToolsWS).change(function(){
+    if ($($buildToolsWS).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    }else { 
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+}  
+});
 
-// $($activities).change(function(){
-//     if ($($npmWS).is(':checked')){
-//         totalCost += 100;
-//         $displayedCost.find(".apple").text(totalCost);
-//     }else { 
-//         totalCost -= 100;
-//         $displayedCost.find(".apple").text(totalCost);
-// }
-// });
+$($npmWS).change(function(){
+    if ($($npmWS).is(':checked')){
+        totalCost += 100;
+        $displayedCost.find(".apple").text(totalCost);
+        $displayedCost.show();
+    }else { 
+        totalCost -= 100;
+        $displayedCost.find(".apple").text(totalCost);
+}
+});
 
 //The form element:
 //<form action = "index.html" method = "post"></form>
