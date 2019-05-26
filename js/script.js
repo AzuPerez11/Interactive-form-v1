@@ -168,6 +168,42 @@ $($npmWS).change(function(){
 }
 });
 
+const $creditCard = $("#payment option:eq(1)");
+const $payPal = $("#payment option:eq(2)");
+const $bitCoin = $("#payment option:eq(3)");
+const $ccInfo = $(".credit-card");
+const $ppInfo = $("p:eq(0)");
+const $bcInfo = $("p:eq(1)");
+
+$("#payment option:eq(0)").hide();
+$creditCard.attr("selected", true);
+$ppInfo.hide();
+$bcInfo.hide();
+
+$("#payment").change(function(){
+    if($("#payment").val()==="paypal"){
+        $ppInfo.show();
+       $ccInfo.hide();
+       $bcInfo.hide()
+    }
+});
+
+$("#payment").change(function(){
+    if($("#payment").val()==="bitcoin"){
+        $ppInfo.hide();
+        $bcInfo.show();
+       $ccInfo.hide();
+    }
+});
+
+$("#payment").change(function(){
+    if($("#payment").val()==="credit card"){
+        $ppInfo.hide();
+        $bcInfo.hide();
+       $ccInfo.show();
+    }
+});
+
 //The form element:
 //<form action = "index.html" method = "post"></form>
 //<h1>Sign Up</h1>
