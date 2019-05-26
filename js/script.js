@@ -204,6 +204,93 @@ $("#payment").change(function(){
     }
 });
 
+const $submit = $("button:eq(0)");
+const $name = $("#name");
+const $email = $("#mail");
+//const for activities section is $activities
+const $ccNumber = $("#cc-num");
+const $ccZip = $("#zip");
+const $ccCvv = $("#cvv");
+
+
+$submit.on('click', function(event){
+//check if name has been entered
+// if name has not been entered
+if ($name.val().length<2){
+//prevent submission of form
+event.preventDefault();
+//alert the user
+alert("Enter your name");
+$name.css("border", "3px solid red");
+return true;
+}
+});
+
+$submit.on('click', function(event){
+    //check if name has been entered
+    // if name has not been entered
+    if ($email.val().length<7){
+    //prevent submission of form
+    event.preventDefault();
+    //alert the user
+    alert("Enter your email");
+    $email.css("border", "3px solid red");
+    return true;
+    }
+    });
+
+$submit.on('click', function(event){
+    //check if name has been entered
+    // if name has not been entered
+    if (totalCost<100){
+    //prevent submission of form
+    event.preventDefault();
+    // alert the user
+    alert("Select at least one activity");
+    $activities.css("border", "3px solid red");
+    }
+    });
+
+$submit.on('click', function(event){
+    //check if name has been entered
+    // if name has not been entered
+    if ($("#payment").val()==="credit card"){
+     $ccNumber.val().length<13;
+    //prevent submission of form
+    event.preventDefault();
+    // alert the user
+    alert("Enter a credit card number");
+    $ccNumber.css("border", "3px solid red");
+    }
+    });
+
+$submit.on('click', function(event){
+    //check if name has been entered
+    // if name has not been entered
+    if ($("#payment").val()==="credit card"){
+    $ccZip.val().length<6
+    //prevent submission of form
+    event.preventDefault();
+    // alert the user
+    alert("Enter a zip code");
+    $ccZip.css("border", "3px solid red");
+    }
+    });
+
+$submit.on('click', function(event){
+    //check if name has been entered
+    // if name has not been entered
+    if ($("#payment").val()==="credit card"){
+    $ccCvv.val().length<3
+    //prevent submission of form
+    event.preventDefault();
+    // alert the user
+    alert("Enter a cvv code");
+    $ccCvv.css("border", "3px solid red");
+    }
+    });
+
+
 //The form element:
 //<form action = "index.html" method = "post"></form>
 //<h1>Sign Up</h1>
